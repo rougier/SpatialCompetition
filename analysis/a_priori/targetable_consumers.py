@@ -31,9 +31,9 @@ def targetable_consumers(fig_name):
     ax = plt.subplot()
     x = np.linspace(0, 1, n_position)
 
-    for r in [0.25, 0.50, 0.75]:
+    for r, line_style in zip([0.25, 0.50, 0.75], ["--", "-", ":"]):
         y = get_targetable(r, n_position=n_position)
-        ax.plot(x, y, label="$r={:.2f}$".format(r), linewidth=2, clip_on=True)
+        ax.plot(x, y, label="$r={:.2f}$".format(r), linewidth=1.5, clip_on=True, linestyle=line_style, color="black")
 
     plt.legend()
 
